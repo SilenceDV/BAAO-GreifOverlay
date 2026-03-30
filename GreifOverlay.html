@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+#gift {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+</style>
+</head>
+<body>
+
+<img id="gift" src="MoneyGun.png">
+
+<script>
+const gifts = [
+  "TAX.png",
+  "ShaveHead.png",
+  "PunishmentWheel.png",
+  "TheHype.png",
+];
+
+let index = 0;
+const img = document.getElementById("gift");
+
+setInterval(() => {
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+    index = (index + 1) % gifts.length;
+    img.src = gifts[index];
+    img.style.opacity = 1;
+  }, 600);
+
+}, 5000);
+</script>
+
+</body>
+</html>
